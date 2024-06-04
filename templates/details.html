@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h2>Medicine Details</h2>
+<table>
+    <tr>
+        <th>ID</th>
+        <td>{{ medicine[0] }}</td>
+    </tr>
+    <tr>
+        <th>Your Name</th>
+        <td>{{ medicine[1] }}</td>
+    </tr>
+    <tr>
+        <th>Medicine Name</th>
+        <td>{{ medicine[2] }}</td>
+    </tr>
+    <tr>
+        <th>Quantity</th>
+        <td>{{ medicine[3] }}</td>
+    </tr>
+</table>
+{% endblock %}

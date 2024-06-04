@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <!-- Your search content goes here -->
+    <h2>Medicine Inventory</h2>
+    <form method="get">
+        <input type="text" name="query" placeholder="Search by name">
+        <button type="submit">Search</button>
+    </form>
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Quantity</th>
+                <th>Price</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for medicine in medicines %}
+            <tr>
+                <td>{{ medicine[0] }}</td>
+                <td>{{ medicine[1] }}</td>
+                <td>{{ medicine[2] }}</td>
+                <td>{{ medicine[3] }}</td>
+                <td>
+                    <a href="{{ url_for('details', medicine_id=medicine[0]) }}">Details</a>
+                    <a href="{{ url_for('delete_medicine', medicine_id=medicine[0]) }}">Delete</a>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}
